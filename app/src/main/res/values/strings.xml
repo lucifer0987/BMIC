@@ -1,0 +1,39 @@
+<resources>
+    <string name="app_name">BMI calculator</string>
+    <string name="enter_your_name_please">Your Full Name</string>
+    <string name="sex">Gender</string>
+    <string name="age">Age</string>
+    <string name="get_your_bmi_score">BMI SCORE</string>
+    <string name="reset">RESET</string>
+    <string name="weight">Weight</string>
+    <string name="height_in_m">Height</string>
+    <string name="about_yourself">About Yourself!</string>
+    <string name="enter_your_details">Enter Your Details</string>
+    <string name="body_mass_index">Body Mass Index</string>
+    <string name="present_exercise_and_habits">Present exercise plans(optional)</string>
+    <string name="_units">units</string>
+    <string name="my_Title">BMIC Form</string>
+    <string name="my_Title2">BMIC Report</string>
+    <string name="ideal_weight">Ideal Weight</string>
+    <string name="_23_2_kg">23.2 kg</string>
+    <string name="bmi">BMI</string>
+    <string name="gaurav_kumar">Gaurav Kumar</string>
+    <string name="m">M</string>
+    <string name="_19">19</string>
+    <string name="weight_loss">BMR</string>
+    <string name="fat">Fat %</string>
+    <string name="_23_2">23.2</string>
+
+    <string-array name="weight_units">
+        <item>kg</item>
+        <item>pound</item>
+    </string-array>
+
+    <string-array name="length_units">
+        <item>metre</item>
+        <item>cm</item>
+        <item>inches</item>
+    </string-array>
+
+
+</resources>
