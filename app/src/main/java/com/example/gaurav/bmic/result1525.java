@@ -44,20 +44,6 @@ public class result1525 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result1525);
 
-        final RelativeLayout layout = (RelativeLayout) findViewById(R.id.master);
-        Button button = (Button) findViewById(R.id.download);
-
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Bitmap bitmap = getBitmap(layout);
-                saveChart(bitmap, layout.getMeasuredHeight(), layout.getMeasuredWidth());
-            }
-        });
-
-
-
-
 
         //sharing option.
         button3 = (Button) findViewById(R.id.share);
@@ -233,62 +219,5 @@ public class result1525 extends AppCompatActivity {
         double bf4= (bf2 - bf3) - 5.4;
         return bf4;
     }
-
-    //create bitmap of layout.
-    public Bitmap getBitmap(RelativeLayout layout){
-            layout.setDrawingCacheEnabled(true);
-            layout.buildDrawingCache();
-            Bitmap bmp = Bitmap.createBitmap(layout.getDrawingCache());
-            layout.setDrawingCacheEnabled(false);
-            return bmp;
-    }
-
-    //save bitmap of layout.
-    public void saveChart(Bitmap getbitmap, float height, float width) {
-            File folder = new File(Environment
-            .getExternalStoragePublicDirectory(Environment.DIRECTORY_PICTURES),"myfolder");
-        boolean success = false;
-        if (!folder.exists()) {
-            success = folder.mkdirs();
-        }
-        String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss", Locale.getDefault()).format(new Date());
-        File file = new File(folder.getPath() + File.separator + ""+ timeStamp + ".png");
-        if ( !file.exists() ) {
-        try {
-                success = file.createNewFile();
-        } catch (IOException e) {
-                e.printStackTrace();
-        }
-        }
-        FileOutputStream ostream = null;
-        try
-                {
-                ostream = new FileOutputStream(file);
-            System.out.println(ostream);
-            Bitmap well = getbitmap;
-                Bitmap save = Bitmap.createBitmap((int) width, (int) height, Bitmap.Config.ARGB_8888);
-                Paint paint = new Paint();
-                paint.setColor(Color.WHITE);
-                Canvas now = new Canvas(save);
-                now.drawRect(new Rect(0,0,(int) width, (int) height), paint);
-                now.drawBitmap(well,
-                new Rect(0,0,well.getWidth(),well.getHeight()),new Rect(0,0,(int) width, (int) height), null);
-            if(save == null) {
-                System.out.println("NULL bitmap save\n");
-        }
-                save.compress(Bitmap.CompressFormat.PNG, 100, ostream);
-                }catch (NullPointerException e)
-                {
-                e.printStackTrace();
-        Toast.makeText(getApplicationContext(), "Null error", Toast.LENGTH_SHORT).show();
-        }
-        catch (FileNotFoundException e)
-                {
-                e.printStackTrace();
-        Toast.makeText(getApplicationContext(), "File error", Toast.LENGTH_SHORT).show();
-        }
-    }
-
-
 
 }
