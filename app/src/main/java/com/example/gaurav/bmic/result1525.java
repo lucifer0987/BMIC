@@ -75,11 +75,9 @@ public class result1525 extends AppCompatActivity {
 
             @Override
             public void onClick(View arg0) {
-
                 Intent i = new Intent(
                         Intent.ACTION_PICK,
                         android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-
                 startActivityForResult(i, PICK_IMAGE_REQUEST);
             }
         });
@@ -181,11 +179,9 @@ public class result1525 extends AppCompatActivity {
         if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null) {
 
             Uri uri = data.getData();
-
             try {
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 // Log.d(TAG, String.valueOf(bitmap));
-
                 ImageView imageView = (ImageView) findViewById(R.id.image);
                 imageView.setImageBitmap(bitmap);
             } catch (IOException e) {
