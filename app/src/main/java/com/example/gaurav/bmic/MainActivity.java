@@ -27,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
         StartSmartAnimation.startAnimation( findViewById(R.id.logo) , AnimationType.DropOut , 2000 , 100 , true );
 
         //it makes the i visible after 2 seconds.
-
         new Handler().postDelayed(new Runnable() {
             public void run() {
                 findViewById(R.id.i).setVisibility(View.VISIBLE);
